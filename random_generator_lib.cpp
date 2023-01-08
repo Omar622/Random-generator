@@ -48,8 +48,7 @@ T pick_random(std::vector<T> &vec)
 {
     if (vec.empty())
     {
-        std::cerr << "can not pick from empty vector\n";
-        throw;
+        throw std::invalid_argument("can not pick from empty vector");
     }
 
     int index = random32(0, vec.size() - 1);
@@ -68,8 +67,7 @@ T pick_random_and_remove(std::vector<T> &vec)
 {
     if (vec.empty())
     {
-        std::cerr << "can not pick from empty vector\n";
-        throw;
+        throw std::invalid_argument("can not pick from empty vector");
     }
 
     int index = random32(0, vec.size() - 1);
@@ -112,12 +110,12 @@ std::string random_string(int length)
 
 /**
  * @brief generates random tree in O(number_of_nodes)
- * 
- * @param number_of_nodes 
+ *
+ * @param number_of_nodes
  * @param root optional paramater. if it is not given the root will be random node
  * @param height optional paramater. if it is not given it will be random
  * and if it was incorrect it will be set to the nearest valid height
- * @return std::vector<std::pair<int, int>> 
+ * @return std::vector<std::pair<int, int>>
  */
 std::vector<std::pair<int, int>> random_tree(int number_of_nodes, int root = -1, int height = -1)
 {
@@ -127,7 +125,7 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes, int root = -1,
     // pick random root if not given or given and not valid
     if (root > number_of_nodes or root < 1)
         root = random32(1, number_of_nodes);
-    
+
     // pick random height if not given
     if (!~height)
         height = random32(1, number_of_nodes - 1);
@@ -136,11 +134,11 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes, int root = -1,
         height = 1;
     // if height is too tall set it to max
     if (height > number_of_nodes - 1)
-        height = number_of_nodes;
+        height = number_of_nodes - 1;
 
     std::vector<std::pair<int, int>> edges;
     std::vector<int> nodes_of_depth[height + 1];
-    std::vector<int> nodes;
+    std::vector<int> nodes(number_of_nodes);
     iota(nodes.begin(), nodes.end(), 1);
     std::shuffle(nodes.begin(), nodes.end(), rnd_gen);
 
