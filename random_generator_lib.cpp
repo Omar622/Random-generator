@@ -37,47 +37,49 @@ long long random64(long long left, long long right)
 }
 
 /**
- * @brief the next four functions shuffle array or vector of int or long long in O(size)
+ * @brief pick random item fron vector of items
  *
- * @param arr, vec the given container of data type int or long long
- * @param size size of container
- * @param left, right optional parameters if given will shuffle the range [left:rigth] (0-indexed)
- *                    otherwise will shuffle the whole container
+ * @tparam T the data type of vector
+ * @param vec the container
+ * @return T the data type of vector is same as the returned data type
  */
-void shuffle_rnd(int *arr, int size, int left = -1, int right = -1)
+template <typename T>
+T pick_random(std::vector<T> &vec)
 {
-    if (!~left)
-        left = 0;
-    if (!~right)
-        right = size;
-    std::shuffle(arr + left, arr + right, rnd_gen);
-}
-void shuffle_rnd(long long *arr, int size, int left = -1, int right = -1)
-{
-    if (!~left)
-        left = 0;
-    if (!~right)
-        right = size;
-    std::shuffle(arr + left, arr + right, rnd_gen);
-}
-void shuffle_rnd(std::vector<int> &vec, int left = -1, int right = -1)
-{
-    if (!~left)
-        left = 0;
-    if (!~right)
-        right = vec.size();
-    std::shuffle(vec.begin() + left, vec.begin() + right, rnd_gen);
-}
-void shuffle_rnd(std::vector<long long> &vec, int left = -1, int right = -1)
-{
-    if (!~left)
-        left = 0;
-    if (!~right)
-        right = vec.size();
-    std::shuffle(vec.begin() + left, vec.begin() + right, rnd_gen);
+    if (vec.empty())
+    {
+        std::cerr << "can not pick from empty vector\n";
+        throw;
+    }
+
+    int index = random32(0, vec.size() - 1);
+    return vec[index];
 }
 
-// random number of n digit as string in O(n)
+/**
+ * @brief pick random item fron vector of items then remove it from the vector
+ *
+ * @tparam T the data type of vector
+ * @param vec the container
+ * @return T the data type of vector is same as the returned data type
+ */
+template <typename T>
+T pick_random_and_remove(std::vector<T> &vec)
+{
+    if (vec.empty())
+    {
+        std::cerr << "can not pick from empty vector\n";
+        throw;
+    }
+
+    int index = random32(0, vec.size() - 1);
+    std::swap(vec[index], vec.back());
+    T value = vec.back();
+    vec.pop_back();
+
+    return value;
+}
+
 /**
  * @brief generate random number of (length) digit in O(length)
  *
@@ -109,26 +111,71 @@ std::string random_string(int length)
 }
 
 /**
- * @brief generate random tree in O(number_of_nodes)
- *
- * @param number_of_nodes
- * @param root optoinal paramater. if it is not given the root will be random
- * @return std::vector<std::pair<int, int>>. (number_of_nodes-1) edge
+ * @brief generates random tree in O(number_of_nodes)
+ * 
+ * @param number_of_nodes 
+ * @param root optional paramater. if it is not given the root will be random node
+ * @param height optional paramater. if it is not given it will be random
+ * and if it was incorrect it will be set to the nearest valid height
+ * @return std::vector<std::pair<int, int>> 
  */
-std::vector<std::pair<int, int>> random_tree(int number_of_nodes, int root = -1)
+std::vector<std::pair<int, int>> random_tree(int number_of_nodes, int root = -1, int height = -1)
 {
-    if (!~root)
+    if (number_of_nodes <= 1)
+        return {};
+
+    // pick random root if not given or given and not valid
+    if (root > number_of_nodes or root < 1)
         root = random32(1, number_of_nodes);
+    
+    // pick random height if not given
+    if (!~height)
+        height = random32(1, number_of_nodes - 1);
+    // if height is too small set it to 1
+    if (height < 1)
+        height = 1;
+    // if height is too tall set it to max
+    if (height > number_of_nodes - 1)
+        height = number_of_nodes;
 
     std::vector<std::pair<int, int>> edges;
-    std::vector<int> nodes = {root};
-    for (int node = 1; node <= number_of_nodes; ++node)
-        if (node != root)
+    std::vector<int> nodes_of_depth[height + 1];
+    std::vector<int> nodes;
+    iota(nodes.begin(), nodes.end(), 1);
+    std::shuffle(nodes.begin(), nodes.end(), rnd_gen);
+
+    nodes_of_depth[0] = {root};
+    for (int h = 1; h <= height; ++h)
+    {
+        int random_node = pick_random_and_remove(nodes);
+        if (random_node == root)
         {
-            int random_node = nodes[random32(0, nodes.size() - 1)];
-            edges.push_back({random_node, node});
-            nodes.emplace_back(node);
+            --h;
+            continue;
         }
+
+        if (edges.empty())
+            edges.push_back({root, random_node});
+        else
+            edges.push_back({edges.back().second, random_node});
+
+        nodes_of_depth[h].emplace_back(random_node);
+    }
+
+    while (!nodes.empty())
+    {
+        int random_not_connected_node = pick_random_and_remove(nodes);
+        if (random_not_connected_node == root)
+            continue;
+
+        int random_depth = random32(0, height - 1);
+        int random_connected_node = pick_random(nodes_of_depth[random_depth]);
+
+        edges.push_back({random_connected_node, random_not_connected_node});
+        nodes_of_depth[random_depth + 1].push_back(random_not_connected_node);
+    }
+
+    std::shuffle(edges.begin(), edges.end(), rnd_gen);
 
     return edges;
 }
