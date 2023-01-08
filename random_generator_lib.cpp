@@ -47,9 +47,7 @@ template <typename T>
 T pick_random(std::vector<T> &vec)
 {
     if (vec.empty())
-    {
         throw std::invalid_argument("can not pick from empty vector");
-    }
 
     int index = random32(0, vec.size() - 1);
     return vec[index];
@@ -66,9 +64,7 @@ template <typename T>
 T pick_random_and_remove(std::vector<T> &vec)
 {
     if (vec.empty())
-    {
         throw std::invalid_argument("can not pick from empty vector");
-    }
 
     int index = random32(0, vec.size() - 1);
     std::swap(vec[index], vec.back());
