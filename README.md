@@ -49,6 +49,7 @@ Here are the docs of all functions.
     -   return random integer number in given range [left, right].
     -   the chosen number is uniformly distributed.
     -   using [random seed](#1-random-seed).
+    -   if the given left greater than the given right, function will throw error `(random32 parameters is invalid)`.
 -   function name
     -   `random32`
 -   params
@@ -66,6 +67,7 @@ Here are the docs of all functions.
     -   return random long long number in given range [left, right].
     -   the chosen number is uniformly distributed.
     -   using [random seed](#1-random-seed).
+    -   if the given left greater than the given right, function will throw error `(random32 parameters is invalid)`.
 -   function name
     -   `random64`
 -   params
