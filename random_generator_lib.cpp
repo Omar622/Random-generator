@@ -54,7 +54,7 @@ std::string random_string(int length)
 {
     std::string str(length, ' ');
     for (int i = 0; i < length; ++i)
-        str[i] = 'a' + random32(0, 26);
+        str[i] = 'a' + random32(0, 25);
 
     return str;
 }
