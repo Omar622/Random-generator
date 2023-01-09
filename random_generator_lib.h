@@ -1,10 +1,16 @@
 #ifndef RANDOM_GENERATOR_LIB_H
 #define RANDOM_GENERATOR_LIB_H
 
+#include <iostream>
+#include <random>
+#include <algorithm>
+#include <vector>
+#include <string>
+
 /**
  * @brief there is some functions help to generate random things
  * such as integer, strings, trees, ... and also shuffling.
- * 
+ *
  * there are more comments explain each function in the .cpp file
  */
 
@@ -15,9 +21,9 @@ int random32(int, int);
 long long random64(long long, long long);
 
 template <typename T>
-T pick_random(std::vector<T>&);
+T pick_random(std::vector<T> &);
 template <typename T>
-T pick_random_and_remove(std::vector<T>&);
+T pick_random_and_remove(std::vector<T> &);
 
 std::string random_huge_number(int);
 

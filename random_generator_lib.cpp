@@ -1,7 +1,3 @@
-#include <iostream>
-#include <random>
-#include <algorithm>
-
 #include "random_generator_lib.h"
 
 /**
@@ -13,10 +9,8 @@
 int random32(int left, int right)
 {
     if (left > right)
-    {
-        std::cerr << "Exception: random32 parameters is invalid\n";
-        throw;
-    }
+        throw std::invalid_argument("random32 parameters is invalid");
+
     return rnd_gen() % (right - left + 1) + left;
 }
 
@@ -29,10 +23,8 @@ int random32(int left, int right)
 long long random64(long long left, long long right)
 {
     if (left > right)
-    {
-        std::cerr << "Exception: random64 parameters is invalid\n";
-        throw;
-    }
+        throw std::invalid_argument("random64 parameters is invalid");
+
     return (1ll * rnd_gen() * rnd_gen()) % (right - left + 1) + left;
 }
 
@@ -111,7 +103,8 @@ std::string random_string(int length)
  * @param root optional paramater. if it is not given the root will be random node
  * @param height optional paramater. if it is not given it will be random
  * and if it was incorrect it will be set to the nearest valid height
- * @return std::vector<std::pair<int, int>>
+ * @return std::vector<std::pair<int, int>>. every pair represents an edge in the tree means that
+ * pair.first have direct edge to pair.second. the vector will have size = number of nodes - 1
  */
 std::vector<std::pair<int, int>> random_tree(int number_of_nodes, int root = -1, int height = -1)
 {
