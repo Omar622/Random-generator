@@ -163,3 +163,7 @@ Here are the docs of all functions.
 -   complexity
     -   O(number of nodes)
 -   see [random_tree example](https://github.com/Omar622/Random-generator/blob/main/examples/random_tree/)
+
+## Contribute 🤝
+
+If you want to contribute to this library, you're always welcome!
