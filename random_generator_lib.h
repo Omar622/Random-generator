@@ -15,7 +15,7 @@
  */
 
 // full 32-bit unsigned random number
-std::mt19937 rnd_gen(time(0));
+std::mt19937 random_seed(time(0));
 
 int random32(int, int);
 long long random64(long long, long long);

@@ -10,8 +10,8 @@ int random32(int left, int right)
 {
     if (left > right)
         throw std::invalid_argument("random32 parameters is invalid");
-
-    return rnd_gen() % (right - left + 1) + left;
+    std::uniform_int_distribution<int> dist(left, right);
+    return dist(random_seed);
 }
 
 /**
@@ -24,8 +24,9 @@ long long random64(long long left, long long right)
 {
     if (left > right)
         throw std::invalid_argument("random64 parameters is invalid");
-
-    return (1ll * rnd_gen() * rnd_gen()) % (right - left + 1) + left;
+    
+    std::uniform_int_distribution<long long> dist(left, right);
+    return dist(random_seed);
 }
 
 /**
@@ -129,7 +130,7 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes, int root = -1,
     std::vector<int> nodes_of_depth[height + 1];
     std::vector<int> nodes(number_of_nodes);
     iota(nodes.begin(), nodes.end(), 1);
-    std::shuffle(nodes.begin(), nodes.end(), rnd_gen);
+    std::shuffle(nodes.begin(), nodes.end(), random_seed);
 
     nodes_of_depth[0] = {root};
     for (int h = 1; h <= height; ++h)
@@ -162,7 +163,7 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes, int root = -1,
         nodes_of_depth[random_depth + 1].push_back(random_not_connected_node);
     }
 
-    std::shuffle(edges.begin(), edges.end(), rnd_gen);
+    std::shuffle(edges.begin(), edges.end(), random_seed);
 
     return edges;
 }
