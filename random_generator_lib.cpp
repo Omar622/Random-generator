@@ -60,7 +60,7 @@ std::string random_string(int length)
 }
 
 /**
- * @brief pick random item fron vector of items
+ * @brief pick random item from vector of items
  *
  * @tparam T the data type of vector
  * @param vec the container
@@ -77,7 +77,7 @@ T pick_random(std::vector<T> &vec)
 }
 
 /**
- * @brief pick random item fron vector of items then remove it from the vector
+ * @brief pick random item from vector of items then remove it from the vector
  *
  * @tparam T the data type of vector
  * @param vec the container
