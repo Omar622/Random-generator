@@ -24,9 +24,39 @@ long long random64(long long left, long long right)
 {
     if (left > right)
         throw std::invalid_argument("random64 parameters is invalid");
-    
+
     std::uniform_int_distribution<long long> dist(left, right);
     return dist(random_seed);
+}
+
+/**
+ * @brief generate random number of (length) digit in O(length)
+ *
+ * @param length
+ * @return std::string
+ */
+std::string random_huge_number(int length)
+{
+    std::string str(length, ' ');
+    for (int i = 0; i < length; ++i)
+        str[i] = '0' + random32(!i, 9);
+
+    return str;
+}
+
+/**
+ * @brief generate random string or lower case characters in O(length)
+ *
+ * @param length
+ * @return std::string
+ */
+std::string random_string(int length)
+{
+    std::string str(length, ' ');
+    for (int i = 0; i < length; ++i)
+        str[i] = 'a' + random32(0, 26);
+
+    return str;
 }
 
 /**
@@ -68,36 +98,6 @@ T pick_random_and_remove(std::vector<T> &vec)
 }
 
 /**
- * @brief generate random number of (length) digit in O(length)
- *
- * @param length
- * @return std::string
- */
-std::string random_huge_number(int length)
-{
-    std::string str(length, ' ');
-    for (int i = 0; i < length; ++i)
-        str[i] = '0' + random32(!i, 9);
-
-    return str;
-}
-
-/**
- * @brief generate random string or lower case characters in O(length)
- *
- * @param length
- * @return std::string
- */
-std::string random_string(int length)
-{
-    std::string str(length, ' ');
-    for (int i = 0; i < length; ++i)
-        str[i] = 'a' + random32(0, 26);
-
-    return str;
-}
-
-/**
  * @brief generates random tree in O(number_of_nodes)
  *
  * @param number_of_nodes
@@ -107,8 +107,11 @@ std::string random_string(int length)
  * @return std::vector<std::pair<int, int>>. every pair represents an edge in the tree means that
  * pair.first have direct edge to pair.second. the vector will have size = number of nodes - 1
  */
-std::vector<std::pair<int, int>> random_tree(int number_of_nodes, int root = -1, int height = -1)
+std::vector<std::pair<int, int>> random_tree(int number_of_nodes = -1, int root = -1, int height = -1)
 {
+    if (!~number_of_nodes)
+        number_of_nodes = random32(1, 100000);
+
     if (number_of_nodes <= 1)
         return {};
 
