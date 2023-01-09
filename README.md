@@ -1,47 +1,165 @@
 # Random-genererator
-prewritten functions generate random numbers, arrays, trees, ...
 
-## Intro
-There is some helpful pre written functions:
-  1. Random number in range.
-  2. Shuffle array or vector.
-  3. Large random number as string.
-  4. Random string.
-  5. Random tree.
+It is a library written in `c++` provides some functions generate random numbers, strings, trees, ... and some useful tools see all [provided functions](#provided-functions).
 
-Below you will see how to use them.
+-   [How to use](#How-to-use)
+-   [provided functions](#provided-functions)
+    -   [random seed](#1-random-seed)
+    -   [random number (int)](#2-random-number-int)
+    -   [random number (long long)](#3-random-number-long-long)
+    -   [random huge number](#4-random-huge-number)
+    -   [random string](#5-random-string)
+    -   [pick random item form vector](#6-pick-random-item-form-vector)
+    -   [pick random item form vector and remove it](#7-pick-random-item-form-vector-and-remove-it)
+    -   [random_tree](#8-random_tree)
 
-## Details
-  1. Random number in range.
-     * Return type: integer
-     * Function name: `rnd`
-     * Parameters: left (integer), right (integer)
-  2. Shuffle array or vector.
-     * shuffle array
-         * Return type: void
-         * Function name: `shuffle_rnd`
-         * Parameters: array pointer, size (int), left (int)(optional=0), right (int)(optional=size)
-     * shuffle vector
-         * Return type: void
-         * Function name: `shuffle_rnd`
-         * Parameters: array pointer, left (int)(optional=0), right (int)(optional=size)
-  3. Random number in range.
-     * Return type: long long
-     * Function name: `rndll`
-     * Parameters: left (long long), right (long long)
-  4. Large random number as string.
-     * Return type: string
-     * Function name: `random_huge_number`
-     * Parameters: lenght (integer)
-  5. Random string.
-     * Return type: string
-     * Function name: `random_string`
-     * Parameters: lenght (integer)
-  6. Random tree.
-     * Return type: vector<pair<int, int>>
-     * Function name: `random_tree`
-     * Parameters: number of nodes (integer), root (integer)
-     * More details:
-       * Nodes are numbered 1, 2, 3, ... .
-       * Return (number of nodes - 1) edges.
-       * Edge between u, v is represented as a pair(u, v)
+## How to use
+
+1- download the library besides your `cpp` file.
+
+-   `git clone git@github.com:Omar622/Random-generator.git`
+
+2 - include the header file of the library `random_generator_lib.h` in the cpp file you are working on.
+
+-   `#include "random_generator_lib.h"`
+
+see the [include example.](https://github.com/Omar622/Random-generator/examples/include/include.cpp)
+
+## provided functions
+
+Here are the docs of all functions.
+
+### 1. random seed
+
+-   brief
+    -   It is a random number generator (RNG) `mt19937`. [see more about mt19937](https://cplusplus.com/reference/random/mt19937/)
+-   function name
+    -   `random_seed`
+-   params
+    -   no parameters
+-   return data type
+    -   `(unsigned int)` 32-bit unsigned integer
+-   complexity
+    -   O(1)
+-   see [random_seed example](https://github.com/Omar622/Random-generator/examples/random_seed.cpp)
+
+### 2. random number (int)
+
+-   brief
+    -   return random integer number in given range [left, right].
+    -   the chosen number is uniformly distributed.
+    -   using [random seed](#1-random-seed).
+-   function name
+    -   `random32`
+-   params
+    -   left `(int)`
+    -   right `(int)`
+-   return data type
+    -   `(int)`
+-   complexity
+    -   O(1)
+-   see [random32 example](https://github.com/Omar622/Random-generator/examples/random32.cpp)
+
+### 3. random number (long long)
+
+-   brief
+    -   return random long long number in given range [left, right].
+    -   the chosen number is uniformly distributed.
+    -   using [random seed](#1-random-seed).
+-   function name
+    -   `random64`
+-   params
+    -   left `(long long)`
+    -   right `(long long)`
+-   return data type
+    -   `(long long)`
+-   see [random64 example](https://github.com/Omar622/Random-generator/examples/random64.cpp)
+
+### 4. random huge number
+
+-   brief
+    -   return very big valid random number as string.
+    -   every chosen digit is uniformly distributed using [random seed](#1-random-seed).
+-   function name
+    -   `random_huge_number`
+-   params
+    -   length `(int)`
+-   return data type
+    -   `(string)`
+-   complexity
+    -   O(1)
+-   see [random_huge_number example](https://github.com/Omar622/Random-generator/examples/random_huge_number.cpp)
+
+### 5. random string
+
+-   brief
+    -   return random string consists of only lower case letters.
+    -   every chosen character is uniformly distributed using [random seed](#1-random-seed).
+-   function name
+    -   `random_string`
+-   params
+    -   length `(int)`
+-   return data type
+    -   `(string)`
+-   complexity
+    -   O(length)
+-   see [random_string example](https://github.com/Omar622/Random-generator/examples/random_string.cpp)
+
+### 6. pick random item form vector
+
+-   brief
+    -   return random item from the given vector.
+    -   using [random seed](#1-random-seed).
+-   function name
+    -   `pick_random`
+-   params
+    -   `vector` of any data type
+-   return data type
+    -   same as vector data type
+-   complexity
+    -   O(1)
+-   see [pick_random example](https://github.com/Omar622/Random-generator/examples/pick_random/)
+
+### 7. pick random item form vector and remove it
+
+-   brief
+    -   return random item from the given vector then remove the chosen item.
+    -   using [random seed](#1-random-seed).
+    -   the order of the given vector will be changed after using this function.
+-   function name
+    -   `pick_random_and_remove`
+-   params
+    -   `vector` of any data type
+-   return data type
+    -   same as vector data type
+-   complexity
+    -   O(1)
+-   see [pick_random_and_remove example](https://github.com/Omar622/Random-generator/examples/pick_random_and_remove/)
+
+### 8. random_tree
+
+-   brief
+    -   return random tree given number of nodes, root and height.
+    -   every node will have a unique id from 1 to number of nodes.
+    -   in case not given any parameter they will be chosen randomly.
+    -   in case given not valid root or height, the function will choose the nearest valid root and height.
+-   function name
+    -   `random_tree`
+-   params
+    -   number of nodes `(int)`.
+        -   in case not given it will be chosen randomly in range [1, 100000] using [random number (int)](#2-random-number-int).
+    -   root id `(int)`.
+        -   expected an integer in range [1, number of nodes parameter].
+        -   in case not given it will be chosen randomly in range [1, number of nodes] using [random number (int)](#2-random-number-int).
+        -   in case given not valid root, the function will choose the nearest valid root id.
+    -   height `(int)`.
+        -   expected an integer in range [0, number of nodes parameter - 1].
+        -   in case not given it will be chosen randomly in range [0, number of nodes parameter - 1] using [random number (int)](#2-random-number-int).
+        -   in case given not valid height, the function will choose the nearest valid height.
+-   return data type
+    -   `vector<pair<int, int>>`
+        -   the size of the vector will be equal to (number of nodes - 1).
+        -   each pair in the vector represents a directed edge in the tree. `(pair.first -> pair.second)`
+-   complexity
+    -   O(number of nodes)
+-   see [random_tree example](https://github.com/Omar622/Random-generator/examples/random_tree/)
