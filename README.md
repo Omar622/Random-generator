@@ -23,7 +23,7 @@ It is a library written in `c++` provides some functions generate random numbers
 
 -   `#include "random_generator_lib.h"`
 
-see the [include example.](https://github.com/Omar622/Random-generator/examples/include/include.cpp)
+see the [include example.](https://github.com/Omar622/Random-generator/blob/main/examples/include/include.cpp)
 
 ## provided functions
 
@@ -41,7 +41,7 @@ Here are the docs of all functions.
     -   `(unsigned int)` 32-bit unsigned integer
 -   complexity
     -   O(1)
--   see [random_seed example](https://github.com/Omar622/Random-generator/examples/random_seed.cpp)
+-   see [random_seed example](https://github.com/Omar622/Random-generator/blob/main/examples/random_seed.cpp)
 
 ### 2. random number (int)
 
@@ -58,7 +58,7 @@ Here are the docs of all functions.
     -   `(int)`
 -   complexity
     -   O(1)
--   see [random32 example](https://github.com/Omar622/Random-generator/examples/random32.cpp)
+-   see [random32 example](https://github.com/Omar622/Random-generator/blob/main/examples/random32.cpp)
 
 ### 3. random number (long long)
 
@@ -73,7 +73,7 @@ Here are the docs of all functions.
     -   right `(long long)`
 -   return data type
     -   `(long long)`
--   see [random64 example](https://github.com/Omar622/Random-generator/examples/random64.cpp)
+-   see [random64 example](https://github.com/Omar622/Random-generator/blob/main/examples/random64.cpp)
 
 ### 4. random huge number
 
@@ -88,7 +88,7 @@ Here are the docs of all functions.
     -   `(string)`
 -   complexity
     -   O(1)
--   see [random_huge_number example](https://github.com/Omar622/Random-generator/examples/random_huge_number.cpp)
+-   see [random_huge_number example](https://github.com/Omar622/Random-generator/blob/main/examples/random_huge_number.cpp)
 
 ### 5. random string
 
@@ -103,7 +103,7 @@ Here are the docs of all functions.
     -   `(string)`
 -   complexity
     -   O(length)
--   see [random_string example](https://github.com/Omar622/Random-generator/examples/random_string.cpp)
+-   see [random_string example](https://github.com/Omar622/Random-generator/blob/main/examples/random_string.cpp)
 
 ### 6. pick random item form vector
 
@@ -118,7 +118,7 @@ Here are the docs of all functions.
     -   same as vector data type
 -   complexity
     -   O(1)
--   see [pick_random example](https://github.com/Omar622/Random-generator/examples/pick_random/)
+-   see [pick_random example](https://github.com/Omar622/Random-generator/blob/main/examples/pick_random/)
 
 ### 7. pick random item form vector and remove it
 
@@ -134,7 +134,7 @@ Here are the docs of all functions.
     -   same as vector data type
 -   complexity
     -   O(1)
--   see [pick_random_and_remove example](https://github.com/Omar622/Random-generator/examples/pick_random_and_remove/)
+-   see [pick_random_and_remove example](https://github.com/Omar622/Random-generator/blob/main/examples/pick_random_and_remove/)
 
 ### 8. random_tree
 
@@ -162,4 +162,4 @@ Here are the docs of all functions.
         -   each pair in the vector represents a directed edge in the tree. `(pair.first -> pair.second)`
 -   complexity
     -   O(number of nodes)
--   see [random_tree example](https://github.com/Omar622/Random-generator/examples/random_tree/)
+-   see [random_tree example](https://github.com/Omar622/Random-generator/blob/main/examples/random_tree/)
