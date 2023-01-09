@@ -170,3 +170,42 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes = -1, int root 
 
     return edges;
 }
+
+/**
+ * @brief generates a random permutation in O(length)
+ *
+ * @param length
+ * @return std::vector<int>
+ */
+std::vector<int> random_permutation(int length)
+{
+    if (length < 0)
+        throw std::invalid_argument("can not generate negative size for permutation");
+
+    std::vector<int> vec(length);
+    std::iota(vec.begin(), vec.end(), 1);
+
+    std::vector<int> randomized_vec;
+    while (length--)
+        randomized_vec.push_back(pick_random_and_remove(vec));
+
+    return randomized_vec;
+}
+
+/**
+ * @brief generates a random binary string in O(length)
+ *
+ * @param length
+ * @return std::string
+ */
+std::string random_binary_string(int length)
+{
+    if (length < 0)
+        throw std::invalid_argument("can not generate negative size for string");
+
+    std::string str;
+    while (length--)
+        str.push_back('0' + random32(0, 1));
+
+    return str;
+}

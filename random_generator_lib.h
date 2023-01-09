@@ -31,6 +31,10 @@ T pick_random_and_remove(std::vector<T> &);
 
 std::vector<std::pair<int, int>> random_tree(int, int, int);
 
+std::vector<int> random_permutation(int);
+
+std::string random_binary_string(int);
+
 #include "random_generator_lib.cpp"
 
 #endif
