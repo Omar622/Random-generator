@@ -20,14 +20,14 @@ std::mt19937 random_seed(time(0));
 int random32(int, int);
 long long random64(long long, long long);
 
+std::string random_huge_number(int);
+
+std::string random_string(int);
+
 template <typename T>
 T pick_random(std::vector<T> &);
 template <typename T>
 T pick_random_and_remove(std::vector<T> &);
-
-std::string random_huge_number(int);
-
-std::string random_string(int);
 
 std::vector<std::pair<int, int>> random_tree(int, int, int);
 
