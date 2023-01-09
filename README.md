@@ -40,7 +40,7 @@ Here are the docs of all functions.
 -   return data type
     -   `(unsigned int)` 32-bit unsigned integer
 -   complexity
-    -   O(1)
+    -   `O(1)`
 -   see [random_seed example](https://github.com/Omar622/Random-generator/blob/main/examples/random_seed.cpp)
 
 ### 2. random number (int)
@@ -57,7 +57,7 @@ Here are the docs of all functions.
 -   return data type
     -   `(int)`
 -   complexity
-    -   O(1)
+    -   `O(1)`
 -   see [random32 example](https://github.com/Omar622/Random-generator/blob/main/examples/random32.cpp)
 
 ### 3. random number (long long)
@@ -73,6 +73,8 @@ Here are the docs of all functions.
     -   right `(long long)`
 -   return data type
     -   `(long long)`
+-   complexity
+    -   `O(1)`
 -   see [random64 example](https://github.com/Omar622/Random-generator/blob/main/examples/random64.cpp)
 
 ### 4. random huge number
@@ -87,7 +89,7 @@ Here are the docs of all functions.
 -   return data type
     -   `(string)`
 -   complexity
-    -   O(1)
+    -   `O(1)`
 -   see [random_huge_number example](https://github.com/Omar622/Random-generator/blob/main/examples/random_huge_number.cpp)
 
 ### 5. random string
@@ -102,7 +104,7 @@ Here are the docs of all functions.
 -   return data type
     -   `(string)`
 -   complexity
-    -   O(length)
+    -   `O(length)`
 -   see [random_string example](https://github.com/Omar622/Random-generator/blob/main/examples/random_string.cpp)
 
 ### 6. pick random item form vector
@@ -117,7 +119,7 @@ Here are the docs of all functions.
 -   return data type
     -   same as vector data type
 -   complexity
-    -   O(1)
+    -   `O(1)`
 -   see [pick_random example](https://github.com/Omar622/Random-generator/blob/main/examples/pick_random/)
 
 ### 7. pick random item form vector and remove it
@@ -133,7 +135,7 @@ Here are the docs of all functions.
 -   return data type
     -   same as vector data type
 -   complexity
-    -   O(1)
+    -   `O(1)`
 -   see [pick_random_and_remove example](https://github.com/Omar622/Random-generator/blob/main/examples/pick_random_and_remove/)
 
 ### 8. random_tree
@@ -161,7 +163,7 @@ Here are the docs of all functions.
         -   the size of the vector will be equal to (number of nodes - 1).
         -   each pair in the vector represents a directed edge in the tree. `(pair.first -> pair.second)`
 -   complexity
-    -   O(number of nodes)
+    -   `O(number of nodes)`
 -   see [random_tree example](https://github.com/Omar622/Random-generator/blob/main/examples/random_tree/)
 
 ## Contribute 🤝
