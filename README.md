@@ -3,7 +3,7 @@
 It is a library written in `c++` provides some functions generate random numbers, strings, trees, ... and some useful tools see all [provided functions](#provided-functions).
 
 -   [How to use](#How-to-use)
--   [provided functions](#provided-functions)
+-   [Provided functions](#provided-functions)
     -   [random seed](#1-random-seed)
     -   [random number (int)](#2-random-number-int)
     -   [random number (long long)](#3-random-number-long-long)
@@ -14,6 +14,7 @@ It is a library written in `c++` provides some functions generate random numbers
     -   [random_tree](#8-random_tree)
     -   [random_permutation](#9-random-permutation)
     -   [random_binary_string](#10-random-binary-string)
+-   [Contribute](#contribute-🤝)
 
 ## How to use
 
@@ -199,3 +200,14 @@ Here are the docs of all functions.
 ## Contribute 🤝
 
 If you want to contribute to this library, you're always welcome!
+you can contribute by implementing random function generating something doesn't exist in the library and this function is almost needed.
+
+### Rules of contribution
+1. your function
+    - works correctly.
+    - add comments in your code and the brief comment above your function.
+    - the brief comment must be in the same format as other briefs.
+    - the function is almost needed.
+2. add examples of using function in the [examples](https://github.com/Omar622/Random-generator/tree/main/examples) directory.
+3. add docs about this function in [README](https://github.com/Omar622/Random-generator#readme) file in the same format. (do not forget to add you name 😀)
+
