@@ -14,7 +14,7 @@ It is a library written in `c++` provides some functions generate random numbers
     -   [random_tree](#8-random_tree)
     -   [random_permutation](#9-random-permutation)
     -   [random_binary_string](#10-random-binary-string)
--   [Contribute](#contribute-🤝)
+-   [Contribute](#contribute)
 
 ## How to use
 
@@ -197,9 +197,9 @@ Here are the docs of all functions.
     - `O(length)`
 -   see [random_binary_string example](https://github.com/Omar622/Random-generator/blob/main/examples/random_binary_string.cpp)
 
-## Contribute 🤝
+## Contribute
 
-If you want to contribute to this library, you're always welcome!
+If you want to contribute 🤝 to this library, you're always welcome!
 you can contribute by implementing random function generating something doesn't exist in the library and this function is almost needed.
 
 ### Rules of contribution
