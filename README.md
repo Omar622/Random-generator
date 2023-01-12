@@ -34,6 +34,8 @@ Here are the docs of all functions.
 
 ### 1. random seed
 
+-   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
+
 -   brief
     -   It is a random number generator (RNG) `mt19937`. [see more about mt19937](https://cplusplus.com/reference/random/mt19937/)
 -   function name
@@ -47,6 +49,8 @@ Here are the docs of all functions.
 -   see [random_seed example](https://github.com/Omar622/Random-generator/blob/main/examples/random_seed.cpp)
 
 ### 2. random number (int)
+
+-   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
 
 -   brief
     -   return random integer number in given range [left, right].
@@ -66,6 +70,8 @@ Here are the docs of all functions.
 
 ### 3. random number (long long)
 
+-   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
+
 -   brief
     -   return random long long number in given range [left, right].
     -   the chosen number is uniformly distributed.
@@ -84,6 +90,8 @@ Here are the docs of all functions.
 
 ### 4. random huge number
 
+-   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
+
 -   brief
     -   return very big valid random number as string.
     -   every chosen digit is uniformly distributed using [random seed](#1-random-seed).
@@ -98,6 +106,8 @@ Here are the docs of all functions.
 -   see [random_huge_number example](https://github.com/Omar622/Random-generator/blob/main/examples/random_huge_number.cpp)
 
 ### 5. random string
+
+-   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
 
 -   brief
     -   return random string consists of only lower case letters.
@@ -114,6 +124,8 @@ Here are the docs of all functions.
 
 ### 6. pick random item form vector
 
+-   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
+
 -   brief
     -   return random item from the given vector.
     -   using [random seed](#1-random-seed).
@@ -128,6 +140,8 @@ Here are the docs of all functions.
 -   see [pick_random example](https://github.com/Omar622/Random-generator/blob/main/examples/pick_random/)
 
 ### 7. pick random item form vector and remove it
+
+-   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
 
 -   brief
     -   return random item from the given vector then remove the chosen item.
@@ -144,6 +158,9 @@ Here are the docs of all functions.
 -   see [pick_random_and_remove example](https://github.com/Omar622/Random-generator/blob/main/examples/pick_random_and_remove/)
 
 ### 8. random_tree
+
+-   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
+-   updated by: [Eddard](https://www.linkedin.com/in/eddard/)
 
 -   brief
     -   return random tree given number of nodes, root and height.
@@ -172,6 +189,9 @@ Here are the docs of all functions.
 -   see [random_tree example](https://github.com/Omar622/Random-generator/blob/main/examples/random_tree/)
 
 ### 9. Random Permutation
+
+-   author: [Khaled Hegazy](https://www.linkedin.com/in/khaled-hegazy-61b49a1a9/)
+
 -   brief
     -   return random permutation consists of unique positive integers.
 -   function name
@@ -181,10 +201,13 @@ Here are the docs of all functions.
 -   return data type
     -   `vector<int>`
 -   Complexity
-    - `O(length)`
+    -   `O(length)`
 -   see [random_permutation example](https://github.com/Omar622/Random-generator/blob/main/examples/random_permutation.cpp)
 
 ### 10. Random Binary String
+
+-   author: [Khaled Hegazy](https://www.linkedin.com/in/khaled-hegazy-61b49a1a9/)
+
 -   brief
     -   return random binary string conists of binary digits `0`,`1`.
 -   function name
@@ -194,8 +217,9 @@ Here are the docs of all functions.
 -   return data type
     -   `string`
 -   Complexity
-    - `O(length)`
+    -   `O(length)`
 -   see [random_binary_string example](https://github.com/Omar622/Random-generator/blob/main/examples/random_binary_string.cpp)
+
 
 ## Contribute
 
@@ -203,11 +227,11 @@ If you want to contribute 🤝 to this library, you're always welcome!
 you can contribute by implementing random function generating something doesn't exist in the library and this function is almost needed.
 
 ### Rules of contribution
+
 1. your function
     - works correctly.
     - add comments in your code and the brief comment above your function.
     - the brief comment must be in the same format as other briefs.
     - the function is almost needed.
 2. add examples of using function in the [examples](https://github.com/Omar622/Random-generator/tree/main/examples) directory.
-3. add docs about this function in [README](https://github.com/Omar622/Random-generator#readme) file in the same format. (do not forget to add you name 😀)
-
+3. add docs about this function in [README](https://github.com/Omar622/Random-generator#readme) file in the same format. (do not forget to add your name and linkedin or github link 😀)
