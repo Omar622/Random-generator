@@ -178,9 +178,9 @@ Here are the docs of all functions.
 -   params
     -   length `(int)`
 -   return data type
-    -   `std::vector<int>`
+    -   `vector<int>`
 -   Complexity
-    - `O(lenght)`
+    - `O(length)`
 -   see [random_permutation example](https://github.com/Omar622/Random-generator/blob/main/examples/random_permutation.cpp)
 
 ### 10. Random Binary String
@@ -191,9 +191,9 @@ Here are the docs of all functions.
 -   params
     -   length `(int)`
 -   return data type
-    -   `std::string`
+    -   `string`
 -   Complexity
-    - `O(lenght)`
+    - `O(length)`
 -   see [random_binary_string example](https://github.com/Omar622/Random-generator/blob/main/examples/random_binary_string.cpp)
 
 ## Contribute 🤝
