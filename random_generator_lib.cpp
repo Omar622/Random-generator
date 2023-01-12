@@ -130,40 +130,49 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes = -1, int root 
         height = number_of_nodes - 1;
 
     std::vector<std::pair<int, int>> edges;
-    std::vector<int> nodes_of_depth[height + 1];
-    std::vector<int> nodes(number_of_nodes);
-    iota(nodes.begin(), nodes.end(), 1);
-    std::shuffle(nodes.begin(), nodes.end(), random_seed);
+    int depth[number_of_nodes];
+    std::vector<int> nodes_to_connect, disconnected_nodes(number_of_nodes);
+    iota(disconnected_nodes.begin(), disconnected_nodes.end(), 1);
 
-    nodes_of_depth[0] = {root};
+    depth[root-1] = 0;
+    nodes_to_connect.emplace_back(root);
     for (int h = 1; h <= height; ++h)
     {
-        int random_node = pick_random_and_remove(nodes);
-        if (random_node == root)
+        int random_disconnected_node = pick_random_and_remove(disconnected_nodes);
+        if (random_disconnected_node == root)
         {
             --h;
             continue;
         }
 
         if (edges.empty())
-            edges.push_back({root, random_node});
-        else
-            edges.push_back({edges.back().second, random_node});
+        {
 
-        nodes_of_depth[h].emplace_back(random_node);
+            depth[random_disconnected_node-1] = 1 + depth[root-1];
+            edges.push_back({root, random_disconnected_node});
+        }
+        else
+        {
+            depth[random_disconnected_node-1] = 1 + depth[edges.back().second-1];
+            edges.push_back({edges.back().second, random_disconnected_node});
+        }
+
+        if (depth[random_disconnected_node-1] != height)
+            nodes_to_connect.emplace_back(random_disconnected_node);
     }
 
-    while (!nodes.empty())
+    while (!disconnected_nodes.empty())
     {
-        int random_not_connected_node = pick_random_and_remove(nodes);
-        if (random_not_connected_node == root)
+        int random_disconnected_node = pick_random_and_remove(disconnected_nodes);
+        if (random_disconnected_node == root)
             continue;
+        int random_connected_node = pick_random(nodes_to_connect);
 
-        int random_depth = random32(0, height - 1);
-        int random_connected_node = pick_random(nodes_of_depth[random_depth]);
+        depth[random_disconnected_node-1] = 1 + depth[random_connected_node-1];
+        edges.push_back({random_connected_node, random_disconnected_node});
 
-        edges.push_back({random_connected_node, random_not_connected_node});
-        nodes_of_depth[random_depth + 1].push_back(random_not_connected_node);
+        if (depth[random_disconnected_node-1] != height)
+            nodes_to_connect.emplace_back(random_disconnected_node);
     }
 
     std::shuffle(edges.begin(), edges.end(), random_seed);
