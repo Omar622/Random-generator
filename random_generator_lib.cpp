@@ -147,7 +147,6 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes = -1, int root 
 
         if (edges.empty())
         {
-
             depth[random_disconnected_node-1] = 1 + depth[root-1];
             edges.push_back({root, random_disconnected_node});
         }
