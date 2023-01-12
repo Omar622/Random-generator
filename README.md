@@ -12,6 +12,8 @@ It is a library written in `c++` provides some functions generate random numbers
     -   [pick random item form vector](#6-pick-random-item-form-vector)
     -   [pick random item form vector and remove it](#7-pick-random-item-form-vector-and-remove-it)
     -   [random_tree](#8-random_tree)
+    -   [random_permutation](#9-random-permutation)
+    -   [random_binary_string](#10-random-binary-string)
 
 ## How to use
 
@@ -167,6 +169,32 @@ Here are the docs of all functions.
 -   complexity
     -   `O(number of nodes)`
 -   see [random_tree example](https://github.com/Omar622/Random-generator/blob/main/examples/random_tree/)
+
+### 9. Random Permutation
+-   brief
+    -   return random permutation consists of unique positive integers.
+-   function name
+    -   `random_permutation`
+-   params
+    -   length `(int)`
+-   return data type
+    -   `std::vector<int>`
+-   Complexity
+    - `O(lenght)`
+-   see [random_permutation example](https://github.com/Omar622/Random-generator/blob/main/examples/random_permutation.cpp)
+
+### 10. Random Binary String
+-   brief
+    -   return random binary string conists of binary digits `0`,`1`.
+-   function name
+    -   `random_binary_string`
+-   params
+    -   length `(int)`
+-   return data type
+    -   `std::string`
+-   Complexity
+    - `O(lenght)`
+-   see [random_binary_string example](https://github.com/Omar622/Random-generator/blob/main/examples/random_binary_string.cpp)
 
 ## Contribute 🤝
 
