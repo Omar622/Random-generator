@@ -217,21 +217,3 @@ std::string random_binary_string(int length)
 
     return str;
 }
-/*
- * @brief generates a random vector in O(length)
- *
- * @param minimum value
- * @param maximum value
- * @param length of vector
- *
- * @return vector
- */
-std::vector<T> random_vector(T minimum,T maximum,T length)
-{
-    vector<T>result;
-    while (length--)
-    {
-        result.push_back(random32(minimum,maximum));
-    }
-    return result;
-}
