@@ -6,7 +6,7 @@
  * @param left, right the generated number will be in range [left, right] inclusive
  * @return int
  */
-int random32(int left, int right)
+int random32(int left=INT_MIN, int right=INT_MAX)
 {
     if (left > right)
         throw std::invalid_argument("random32 parameters is invalid");
@@ -48,15 +48,27 @@ std::string random_huge_number(int length)
  * @brief generate random string or lower case characters in O(length)
  *
  * @param length
+ * @param capital
  * @return std::string
  */
-std::string random_string(int length)
+std::string random_string(int length , bool capital=false )
 {
-    std::string str(length, ' ');
-    for (int i = 0; i < length; ++i)
-        str[i] = 'a' + random32(0, 25);
+    if(capital)
+    {
+        std::string str(length, ' ');
+        for (int i = 0; i < length; ++i)
+            str[i] = 'A' + random32(0, 25);
 
-    return str;
+        return str;
+    }
+    else
+    {
+        std::string str(length, ' ');
+        for (int i = 0; i < length; ++i)
+            str[i] = 'a' + random32(0, 25);
+
+        return str;
+    }
 }
 
 /**
@@ -178,7 +190,38 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes = -1, int root 
 
     return edges;
 }
+/**
+ * @brief generates a random edges of graph in O(length)
+ *
+ * @param number_of_edges
+ * @param start
+ * @param end
+ * @param wighted
+ *
+ * @return std::vector<int>
+ */
+std::vector<std::vector<int>> random_edges(int number_of_edges, int start = 1, int end =1e9,bool wighted=false) {
+    std::vector <std::vector<int>> result;
+    while (number_of_edges--)
+    {
+        int first_node= random32(start,end);
+        int second_node= random32(start,end);
 
+        while (first_node==second_node)
+        {
+            second_node= random32(start,end);
+        }
+        if(wighted)
+        {
+            result.push_back({first_node,second_node, random32() });
+        }
+        else
+        {
+            result.push_back({ first_node ,second_node });
+        }
+    }
+    return result;
+}
 /**
  * @brief generates a random permutation in O(length)
  *
@@ -220,15 +263,15 @@ std::string random_binary_string(int length)
 /*
  * @brief generates a random vector in O(length)
  *
+ * @param length of vector
  * @param minimum value
  * @param maximum value
- * @param length of vector
  *
  * @return vector
  */
-std::vector<T> random_vector(T minimum,T maximum,T length)
+std::vector<T> random_vector(T length,T minimum=INT_MIN,T maximum=INT_MAX)
 {
-    vector<T>result;
+    std::vector<T>result;
     while (length--)
     {
         result.push_back(random32(minimum,maximum));
