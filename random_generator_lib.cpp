@@ -3,29 +3,29 @@
 /**
  * @brief generate random integer(int)
  *
- * @param left, right the generated number will be in range [left, right] inclusive
+ * @param low, high the generated number will be in range [low, high] inclusive
  * @return int
  */
-int random32(int left, int right)
+int random32(int low, int high)
 {
-    if (left > right)
+    if (low > high)
         throw std::invalid_argument("random32 parameters is invalid");
-    std::uniform_int_distribution<int> dist(left, right);
+    std::uniform_int_distribution<int> dist(low, high);
     return dist(random_seed);
 }
 
 /**
  * @brief generate random integer(long long)
  *
- * @param left, right the generated number will be in range [left, right] inclusive
+ * @param low, high the generated number will be in range [low, high] inclusive
  * @return long long
  */
-long long random64(long long left, long long right)
+long long random64(long long low, long long high)
 {
-    if (left > right)
+    if (low > high)
         throw std::invalid_argument("random64 parameters is invalid");
 
-    std::uniform_int_distribution<long long> dist(left, right);
+    std::uniform_int_distribution<long long> dist(low, high);
     return dist(random_seed);
 }
 

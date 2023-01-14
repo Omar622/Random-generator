@@ -53,15 +53,15 @@ Here are the docs of all functions.
 -   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
 
 -   brief
-    -   return random integer number in given range [left, right].
+    -   return random integer number in given range [low, high].
     -   the chosen number is uniformly distributed.
     -   using [random seed](#1-random-seed).
-    -   if the given left greater than the given right, function will throw error `(random32 parameters is invalid)`.
+    -   if the given low greater than the given high, function will throw error `(random32 parameters is invalid)`.
 -   function name
     -   `random32`
 -   params
-    -   left `(int)`
-    -   right `(int)`
+    -   low `(int)`
+    -   high `(int)`
 -   return data type
     -   `(int)`
 -   complexity
@@ -73,15 +73,15 @@ Here are the docs of all functions.
 -   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
 
 -   brief
-    -   return random long long number in given range [left, right].
+    -   return random long long number in given range [low, high].
     -   the chosen number is uniformly distributed.
     -   using [random seed](#1-random-seed).
-    -   if the given left greater than the given right, function will throw error `(random64 parameters is invalid)`.
+    -   if the given low greater than the given high, function will throw error `(random64 parameters is invalid)`.
 -   function name
     -   `random64`
 -   params
-    -   left `(long long)`
-    -   right `(long long)`
+    -   low `(long long)`
+    -   high `(long long)`
 -   return data type
     -   `(long long)`
 -   complexity
