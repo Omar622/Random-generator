@@ -51,6 +51,7 @@ Here are the docs of all functions.
 ### 2. random number (int)
 
 -   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
+-   updated by: [ALi Ibrahim](https://github.com/Ali-Ibrahim137)
 
 -   brief
     -   return random integer number in given range [low, high].
@@ -71,6 +72,7 @@ Here are the docs of all functions.
 ### 3. random number (long long)
 
 -   author: [Omar Abdelghani](https://www.linkedin.com/in/omar-abdelghani-596062191/)
+-   updated by: [ALi Ibrahim](https://github.com/Ali-Ibrahim137)
 
 -   brief
     -   return random long long number in given range [low, high].
@@ -219,7 +221,6 @@ Here are the docs of all functions.
 -   Complexity
     -   `O(length)`
 -   see [random_binary_string example](https://github.com/Omar622/Random-generator/blob/main/examples/random_binary_string.cpp)
-
 
 ## Contribute
 
