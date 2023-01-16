@@ -223,7 +223,7 @@ Here are the docs of all functions.
     -   `O(length)`
 -   see [random_binary_string example](https://github.com/Omar622/Random-generator/blob/main/examples/random_binary_string.cpp)
 
-### 11. Random Booleam
+### 11. Random Boolean
 
 -   author: [Khaled Hegazy](https://www.linkedin.com/in/khaled-hegazy-61b49a1a9/)
 
