@@ -134,7 +134,7 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes = -1, int root 
     std::vector<int> nodes_to_connect, disconnected_nodes(number_of_nodes);
     iota(disconnected_nodes.begin(), disconnected_nodes.end(), 1);
 
-    depth[root-1] = 0;
+    depth[root - 1] = 0;
     nodes_to_connect.emplace_back(root);
     for (int h = 1; h <= height; ++h)
     {
@@ -147,16 +147,16 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes = -1, int root 
 
         if (edges.empty())
         {
-            depth[random_disconnected_node-1] = 1 + depth[root-1];
+            depth[random_disconnected_node - 1] = 1 + depth[root - 1];
             edges.push_back({root, random_disconnected_node});
         }
         else
         {
-            depth[random_disconnected_node-1] = 1 + depth[edges.back().second-1];
+            depth[random_disconnected_node - 1] = 1 + depth[edges.back().second - 1];
             edges.push_back({edges.back().second, random_disconnected_node});
         }
 
-        if (depth[random_disconnected_node-1] != height)
+        if (depth[random_disconnected_node - 1] != height)
             nodes_to_connect.emplace_back(random_disconnected_node);
     }
 
@@ -167,10 +167,10 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes = -1, int root 
             continue;
         int random_connected_node = pick_random(nodes_to_connect);
 
-        depth[random_disconnected_node-1] = 1 + depth[random_connected_node-1];
+        depth[random_disconnected_node - 1] = 1 + depth[random_connected_node - 1];
         edges.push_back({random_connected_node, random_disconnected_node});
 
-        if (depth[random_disconnected_node-1] != height)
+        if (depth[random_disconnected_node - 1] != height)
             nodes_to_connect.emplace_back(random_disconnected_node);
     }
 
@@ -216,4 +216,15 @@ std::string random_binary_string(int length)
         str.push_back('0' + random32(0, 1));
 
     return str;
+}
+
+/**
+ * @brief return a random Boolean Value True/False in O(1)
+ *
+ * @return bool
+ */
+
+bool random_boolean()
+{
+    return random32(0, 1);
 }
