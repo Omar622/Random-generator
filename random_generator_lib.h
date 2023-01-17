@@ -35,7 +35,7 @@ std::vector<int> random_permutation(int);
 
 std::string random_binary_string(int);
 
-bool random_boolean();
+bool random_flag();
 
 #include "random_generator_lib.cpp"
 

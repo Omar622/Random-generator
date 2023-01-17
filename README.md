@@ -14,7 +14,7 @@ It is a library written in `c++` provides some functions generate random numbers
     -   [random_tree](#8-random_tree)
     -   [random_permutation](#9-random-permutation)
     -   [random_binary_string](#10-random-binary-string)
-    -   [random_boolean](#11-random-boolean)
+    -   [random_flag](#11-random-flag)
 -   [Contribute](#contribute)
 
 ## How to use
@@ -223,19 +223,21 @@ Here are the docs of all functions.
     -   `O(length)`
 -   see [random_binary_string example](https://github.com/Omar622/Random-generator/blob/main/examples/random_binary_string.cpp)
 
-### 11. Random Boolean
+### 11. Random Flag
 
 -   author: [Khaled Hegazy](https://www.linkedin.com/in/khaled-hegazy-61b49a1a9/)
 
 -   brief
-    -   return boolean value `True`,`False`.
+    -   return random boolean flag with value `True`,`False`.
 -   function name
-    -   `random_boolean`
+    -   `random_flag`
+-   params
+    -   `none`
 -   return data type
     -   `bool`
 -   Complexity
     -   `O(1)`
--   see [random_boolean example](https://github.com/Omar622/Random-generator/blob/main/examples/random_boolean.cpp)
+-   see [random_flag example](https://github.com/Omar622/Random-generator/blob/main/examples/random_flag.cpp)
 
 ## Contribute
 

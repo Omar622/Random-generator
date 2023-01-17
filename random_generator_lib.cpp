@@ -224,7 +224,7 @@ std::string random_binary_string(int length)
  * @return bool
  */
 
-bool random_boolean()
+bool random_flag()
 {
     return random32(0, 1);
 }
