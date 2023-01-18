@@ -60,8 +60,8 @@ Here are the docs of all functions.
 -   function name
     -   `random32`
 -   params
-    -   left `(int)`
-    -   right `(int)`
+    -   min_value `(int)`
+    -   max_value `(int)`
 -   return data type
     -   `(int)`
 -   complexity
@@ -80,8 +80,8 @@ Here are the docs of all functions.
 -   function name
     -   `random64`
 -   params
-    -   left `(long long)`
-    -   right `(long long)`
+    -   min_value `(long long)`
+    -   max_value `(long long)`
 -   return data type
     -   `(long long)`
 -   complexity
@@ -219,6 +219,25 @@ Here are the docs of all functions.
 -   Complexity
     -   `O(length)`
 -   see [random_binary_string example](https://github.com/Omar622/Random-generator/blob/main/examples/random_binary_string.cpp)
+
+### 11. Random vector
+
+-   author: [Mohamed Nasr](https://www.linkedin.com/in/monasr6/)
+
+-   brief
+    -   return random vector conists of numbers .
+-   function name
+    -   `random_vector`
+-   params
+    -   length `(int)`
+    -   max_value `(int)`
+    -   min_value `(int)`
+-   return data type
+    -   `vector`
+-   Complexity
+    -   `O(length)`
+-   see [random_vector example](https://github.com/Omar622/Random-generator/blob/main/examples/random_vector.cpp)
+
 
 
 ## Contribute
