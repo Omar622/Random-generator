@@ -191,38 +191,6 @@ std::vector<std::pair<int, int>> random_tree(int number_of_nodes = -1, int root 
     return edges;
 }
 /**
- * @brief generates a random edges of graph in O(length)
- *
- * @param number_of_edges
- * @param start
- * @param end
- * @param wighted
- *
- * @return std::vector<int>
- */
-std::vector<std::vector<int>> random_edges(int number_of_edges, int start = 1, int end =1e9,bool wighted=false) {
-    std::vector <std::vector<int>> result;
-    while (number_of_edges--)
-    {
-        int first_node= random32(start,end);
-        int second_node= random32(start,end);
-
-        while (first_node==second_node)
-        {
-            second_node= random32(start,end);
-        }
-        if(wighted)
-        {
-            result.push_back({first_node,second_node, random32() });
-        }
-        else
-        {
-            result.push_back({ first_node ,second_node });
-        }
-    }
-    return result;
-}
-/**
  * @brief generates a random permutation in O(length)
  *
  * @param length
