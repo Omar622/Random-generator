@@ -35,6 +35,10 @@ std::vector<int> random_permutation(int);
 
 std::string random_binary_string(int);
 
+std::vector<T> random_vector(T length,T minimum=INT_MIN,T maximum=INT_MAX);
+
+
+
 #include "random_generator_lib.cpp"
 
 #endif

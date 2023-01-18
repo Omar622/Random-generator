@@ -3,29 +3,29 @@
 /**
  * @brief generate random integer(int)
  *
- * @param left, right the generated number will be in range [left, right] inclusive
+ * @param min_value, max_value the generated number will be in range [left, right] inclusive
  * @return int
  */
-int random32(int left=INT_MIN, int right=INT_MAX)
+int random32(int min_value=INT_MIN, int max_value=INT_MAX)
 {
-    if (left > right)
+    if (min_value > max_value)
         throw std::invalid_argument("random32 parameters is invalid");
-    std::uniform_int_distribution<int> dist(left, right);
+    std::uniform_int_distribution<int> dist(min_value, max_value);
     return dist(random_seed);
 }
 
 /**
  * @brief generate random integer(long long)
  *
- * @param left, right the generated number will be in range [left, right] inclusive
+ * @param min_value, max_value the generated number will be in range [left, right] inclusive
  * @return long long
  */
-long long random64(long long left, long long right)
+long long random64(long long min_value, long long max_value)
 {
-    if (left > right)
+    if (min_value > max_value)
         throw std::invalid_argument("random64 parameters is invalid");
 
-    std::uniform_int_distribution<long long> dist(left, right);
+    std::uniform_int_distribution<long long> dist(min_value, max_value);
     return dist(random_seed);
 }
 
@@ -269,12 +269,12 @@ std::string random_binary_string(int length)
  *
  * @return vector
  */
-std::vector<T> random_vector(T length,T minimum=INT_MIN,T maximum=INT_MAX)
+std::vector<T> random_vector(T length,T min_value=INT_MIN,T max_value=INT_MAX)
 {
     std::vector<T>result;
     while (length--)
     {
-        result.push_back(random32(minimum,maximum));
+        result.push_back(random32(min_value,max_value));
     }
     return result;
 }
