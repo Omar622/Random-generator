@@ -4,7 +4,6 @@
 
 int main()
 {
-
     std::cout << random32(1, 15) << "\n";
     std::cout << random32(1, 15) << "\n";
     std::cout << random32(1, 15) << "\n";
