@@ -228,3 +228,28 @@ bool random_flag()
 {
     return random32(0, 1);
 }
+
+
+/**
+ * @brief returns a random lower case vowel
+ * 
+ * @return char
+ */
+
+ char random_vowel_lower() {
+    std:: vector<char> vowels{'a', 'e', 'i', 'o', 'u'}; 
+    int index = random32(0, vowels.size() - 1);
+    return vowels[index];
+ }
+
+ /**
+ * @brief returns a random upper case vowel
+ * 
+ * @return char
+ */
+
+ char random_vowel_upper() {
+    std:: vector<char> vowels{'A', 'E', 'I', 'O', 'U'}; 
+    int index = random32(0, vowels.size() - 1);
+    return vowels[index];
+ }
