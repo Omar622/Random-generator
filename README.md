@@ -237,7 +237,24 @@ Here are the docs of all functions.
     -   `bool`
 -   Complexity
     -   `O(1)`
--   see [random_flag example](https://github.com/Omar622/Random-generator/blob/main/examples/random_flag.cpp)
+-   see [random_flag example](https://github.com/Omar622/Random-generator/blob/main/examples/random_flag.cpp) 
+
+### 12. Random Vowel  
+
+-  author: [Sree Sayi Hrudai](https://www.linkedin.com/in/sayihrudai/) 
+
+-  breif 
+   -  returns random vowel with values ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'].
+-  function name 
+   - `random_vowel_lower`
+   - `random_vowel_upper`
+- params 
+   - `none` 
+- return data type 
+   - `char` 
+- Complexity 
+   - `O(1)` 
+- see [random_vowel example](https://github.com/hrudai2002/Random-generator/blob/main/examples/random_vowel.cpp)
 
 ## Contribute
 
