@@ -241,9 +241,9 @@ Here are the docs of all functions.
 
 ### 12. Random Vowel  
 
--  author: [Sree Sayi Hrudai](https://www.linkedin.com/in/sayihrudai/) 
+-  author: [Sree Sayi Hrudai](https://www.linkedin.com/in/sayihrudai/)
 
--  breif 
+-  brief
    -  returns random vowel with values ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'].
 -  function name 
    - `random_vowel_lower`
@@ -255,6 +255,25 @@ Here are the docs of all functions.
 - Complexity 
    - `O(1)` 
 - see [random_vowel example](https://github.com/hrudai2002/Random-generator/blob/main/examples/random_vowel.cpp)
+
+### 13. Random Matrix  
+
+- author: [Sree Sayi Hrudai](https://www.linkedin.com/in/sayihrudai/)
+
+- brief
+  - returns a matrix with `row` rows and `col` columns and the values in the matrix are in range [low, high]
+- function name
+  - `random_matrix(row, col, low, high)`
+- params
+  - `row` - number of rows in the matrix
+  - `col` - number of columns in the matrix
+  - `low` - starting range
+  - `high`- ending range
+- return data type
+  - `matrix`
+- Complexity
+  - `O(row * col)`
+- see [random_matrix example](https://github.com/hrudai2002/Random-generator/blob/main/examples/random_matrix.cpp)
 
 ## Contribute
 

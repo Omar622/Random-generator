@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <vector>
 #include <string>
+#include <ctime>
 
 /**
  * @brief there is some functions help to generate random things
