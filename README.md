@@ -15,6 +15,7 @@ It is a library written in `c++` provides some functions generate random numbers
     -   [random_permutation](#9-random-permutation)
     -   [random_binary_string](#10-random-binary-string)
     -   [random_flag](#11-random-flag)
+    -   [random_vowel](#12-Random-Vowel)
 -   [Contribute](#contribute)
 
 ## How to use
