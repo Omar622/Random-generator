@@ -6,8 +6,6 @@
 #include <algorithm>
 #include <vector>
 #include <string>
-#include <ctime>
-
 /**
  * @brief there is some functions help to generate random things
  * such as integer, strings, trees, ... and also shuffling.
@@ -37,6 +35,12 @@ std::vector<int> random_permutation(int);
 std::string random_binary_string(int);
 
 bool random_flag();
+
+char random_vowel_lower();
+
+char random_vowel_upper();
+
+std::vector<std::vector<long long>> random_matrix(int, int, int, int);
 
 #include "random_generator_lib.cpp"
 

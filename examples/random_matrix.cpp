@@ -4,7 +4,7 @@
 
 
 int main() {
-    std::vector<std::vector<int>> mat = random_matrix(3, 3, 100, 200);
+    std::vector<std::vector<long long>> mat = random_matrix(3, 3, 100, 200);
 
     int row = mat.size(), col = mat[0].size();
 

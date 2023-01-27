@@ -15,7 +15,8 @@ It is a library written in `c++` provides some functions generate random numbers
     -   [random_permutation](#9-random-permutation)
     -   [random_binary_string](#10-random-binary-string)
     -   [random_flag](#11-random-flag)
-    -   [random_vowel](#12-Random-Vowel)
+    -   [random_vowel](#12-Random-Vowel) 
+    -   [random_matrix](#13-random-matrix)
 -   [Contribute](#contribute)
 
 ## How to use
@@ -271,7 +272,7 @@ Here are the docs of all functions.
   - `low` - starting range
   - `high`- ending range
 - return data type
-  - `matrix`
+  - `vector<vector<long long>>`
 - Complexity
   - `O(row * col)`
 - see [random_matrix example](https://github.com/hrudai2002/Random-generator/blob/main/examples/random_matrix.cpp)

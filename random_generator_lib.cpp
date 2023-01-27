@@ -264,14 +264,14 @@ bool random_flag()
  * @return std::vector<std::vector<int>> 
  */
 
- std::vector<std::vector<int>> random_matrix(int row, int col, int low, int high) {
+ std::vector<std::vector<long long>> random_matrix(int row, int col, int low, int high) {
     if(low > high) {
         throw std::invalid_argument("range is invalid");
     }
     if(row == 0 || col == 0) {
         throw std::invalid_argument("row or column can't be empty");
     }
-    std::vector<std::vector<int>> matrix(row, std::vector<int> (col, 0));
+    std::vector<std::vector<long long>> matrix(row, std::vector<long long> (col, 0));
     for(int i = 0; i < row; ++i) {
         for(int j = 0; j < col; ++j) {
             matrix[i][j] = random64(low, high);
