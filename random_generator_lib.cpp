@@ -229,53 +229,59 @@ bool random_flag()
     return random32(0, 1);
 }
 
-
 /**
  * @brief returns a random lower case vowel
- * 
+ *
  * @return char
  */
 
- char random_vowel_lower() {
-    std:: vector<char> vowels{'a', 'e', 'i', 'o', 'u'}; 
+char random_vowel_lower()
+{
+    std::vector<char> vowels{'a', 'e', 'i', 'o', 'u'};
     int index = random32(0, vowels.size() - 1);
     return vowels[index];
- }
+}
 
- /**
+/**
  * @brief returns a random upper case vowel
- * 
+ *
  * @return char
  */
 
- char random_vowel_upper() {
-    std:: vector<char> vowels{'A', 'E', 'I', 'O', 'U'}; 
+char random_vowel_upper()
+{
+    std::vector<char> vowels{'A', 'E', 'I', 'O', 'U'};
     int index = random32(0, vowels.size() - 1);
     return vowels[index];
- }
+}
 
 /**
  * @brief returns a matrix with 'row' rows and 'col' columns and the values in the matrix are in range [low, high]
- * 
+ *
  * @param row - number of rows in the matrix
  * @param col - number of columns in the matrix
  * @param low - starting range
  * @param high - ending range
- * @return std::vector<std::vector<long long>> 
+ * @return std::vector<std::vector<long long>>
  */
 
- std::vector<std::vector<long long>> random_matrix(int row, int col, long long low, long long high) {
-    if(low > high) {
+std::vector<std::vector<long long>> random_matrix(int row, int col, long long low, long long high)
+{
+    if (low > high)
+    {
         throw std::invalid_argument("range is invalid");
     }
-    if(row == 0 || col == 0) {
+    if (row == 0 || col == 0)
+    {
         throw std::invalid_argument("row or column can't be empty");
     }
-    std::vector<std::vector<long long>> matrix(row, std::vector<long long> (col, 0));
-    for(int i = 0; i < row; ++i) {
-        for(int j = 0; j < col; ++j) {
+    std::vector<std::vector<long long>> matrix(row, std::vector<long long>(col, 0));
+    for (int i = 0; i < row; ++i)
+    {
+        for (int j = 0; j < col; ++j)
+        {
             matrix[i][j] = random64(low, high);
         }
     }
     return matrix;
- }
+}
