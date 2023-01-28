@@ -259,7 +259,7 @@ Here are the docs of all functions.
   - `char`
 - Complexity
   - `O(1)`
-- see [random_vowel example](https://github.com/hrudai2002/Random-generator/blob/main/examples/random_vowel.cpp)
+- see [random_vowel example](https://github.com/Omar622/Random-generator/blob/main/examples/random_vowel.cpp)
 
 ### 13. Random Matrix
 
@@ -278,7 +278,7 @@ Here are the docs of all functions.
   - `vector<vector<long long>>`
 - Complexity
   - `O(row * col)`
-- see [random_matrix example](https://github.com/hrudai2002/Random-generator/blob/main/examples/random_matrix.cpp)
+- see [random_matrix example](https://github.com/Omar622/Random-generator/blob/main/examples/random_matrix.cpp)
 
 ## Contribute
 
