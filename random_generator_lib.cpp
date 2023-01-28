@@ -261,10 +261,10 @@ bool random_flag()
  * @param col - number of columns in the matrix
  * @param low - starting range
  * @param high - ending range
- * @return std::vector<std::vector<int>> 
+ * @return std::vector<std::vector<long long>> 
  */
 
- std::vector<std::vector<long long>> random_matrix(int row, int col, int low, int high) {
+ std::vector<std::vector<long long>> random_matrix(int row, int col, long long low, long long high) {
     if(low > high) {
         throw std::invalid_argument("range is invalid");
     }

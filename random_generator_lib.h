@@ -40,7 +40,7 @@ char random_vowel_lower();
 
 char random_vowel_upper();
 
-std::vector<std::vector<long long>> random_matrix(int, int, int, int);
+std::vector<std::vector<long long>> random_matrix(int, int, long long, long long);
 
 #include "random_generator_lib.cpp"
 
