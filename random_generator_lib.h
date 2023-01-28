@@ -36,9 +36,7 @@ std::string random_binary_string(int);
 
 bool random_flag();
 
-char random_vowel_lower();
-
-char random_vowel_upper();
+char random_vowel(bool);
 
 std::vector<std::vector<long long>> random_matrix(int, int, long long, long long);
 

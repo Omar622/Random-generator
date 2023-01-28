@@ -4,7 +4,13 @@
 
 int main() {
 
-    std:: cout << random_vowel_lower() << "\n";
+    std:: cout << random_vowel(0) << "\n"; // random lower vowel character
 
-    std:: cout << random_vowel_upper() << "\n";
+    std:: cout << random_vowel(0) << "\n"; // random lower vowel character
+
+    std:: cout << random_vowel(1) << "\n"; // random upper vowel character
+
+    std:: cout << random_vowel(1) << "\n"; // random upper vowel character
+
+    return 0;
 }
