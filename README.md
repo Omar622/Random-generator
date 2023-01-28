@@ -15,7 +15,8 @@ It is a library written in `c++` provides some functions generate random numbers
     -   [random_permutation](#9-random-permutation)
     -   [random_binary_string](#10-random-binary-string)
     -   [random_flag](#11-random-flag)
-    -   [random_vowel](#12-Random-Vowel)
+    -   [random_vowel](#12-Random-Vowel) 
+    -   [random_matrix](#13-random-matrix)
 -   [Contribute](#contribute)
 
 ## How to use
@@ -242,9 +243,9 @@ Here are the docs of all functions.
 
 ### 12. Random Vowel  
 
--  author: [Sree Sayi Hrudai](https://www.linkedin.com/in/sayihrudai/) 
+-  author: [Sree Sayi Hrudai](https://www.linkedin.com/in/sayihrudai/)
 
--  breif 
+-  brief
    -  returns random vowel with values ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'].
 -  function name 
    - `random_vowel_lower`
@@ -256,6 +257,25 @@ Here are the docs of all functions.
 - Complexity 
    - `O(1)` 
 - see [random_vowel example](https://github.com/hrudai2002/Random-generator/blob/main/examples/random_vowel.cpp)
+
+### 13. Random Matrix  
+
+- author: [Sree Sayi Hrudai](https://www.linkedin.com/in/sayihrudai/)
+
+- brief
+  - returns a matrix with `row` rows and `col` columns and the values in the matrix are in range [low, high]
+- function name
+  - `random_matrix(row, col, low, high)`
+- params
+  - `row` - number of rows in the matrix
+  - `col` - number of columns in the matrix
+  - `low` - starting range
+  - `high`- ending range
+- return data type
+  - `vector<vector<long long>>`
+- Complexity
+  - `O(row * col)`
+- see [random_matrix example](https://github.com/hrudai2002/Random-generator/blob/main/examples/random_matrix.cpp)
 
 ## Contribute
 
